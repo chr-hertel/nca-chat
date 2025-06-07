@@ -34,8 +34,8 @@ The setup is split into three parts, the Symfony application, the OpenAI configu
 Checkout the repository, start the docker environment and install dependencies:
 
 ```shell
-git clone git@github.com:php-llm/llm-chain-symfony-demo.git
-cd llm-chain-symfony-demo
+git clone git@github.com:chr-hertel/nca-chat.git
+cd nca-chat
 docker compose up -d
 docker compose run composer install
 ```
@@ -75,9 +75,3 @@ The [Chroma DB](https://www.trychroma.com/) is a vector store that is used to st
 It is defined as a service in the `compose.yaml` file and is started automatically when you run `docker compose up`.
 
 **Don't forget to set up the project in your favorite IDE or editor.**
-
-## Functionality
-
-* The chatbot application is a simple and small Symfony 7.3 application.
-* The UI is coupled to a [Twig LiveComponent](https://symfony.com/bundles/ux-live-component/current/index.html), that integrates different `Chat` implementations on top of the user's session.
-* You can reset the chat context by hitting the `Reset` button in the top right corner.

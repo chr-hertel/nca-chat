@@ -44,7 +44,7 @@ body {
         .bot-message {
             border-radius: 10px 10px 10px 0;
             background: #5ab24a;
-            color: #ffffff;
+            color: #e2ffdb;
 
             &.loading {
                 color: rgba(255, 255, 255, 0.5);
