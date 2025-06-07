@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Never Code Alone Bot{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/ico" href="{{ asset('favicon.ico') }}">
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar bg-white shadow-lg navbar-expand">
+            <div class="container">
+                <a class="navbar-brand ms-3 p-0" href="{{ path('index') }}">
+                    {{ ux_icon('fluent:bot-24-filled', { height: '40px', width: '40px' }) }}
+                    <strong>Never Code Alone</strong> Bot
+                </a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto me-3 mb-0">
+                        <li class="nav-item">
+                            <button id="chat-reset" class="nav-link">{{ ux_icon('material-symbols:cancel') }} Chat zurücksetzen</button>
+                        </li>
+                        <li class="nav-item"><span class="nav-link">|</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://youtube.com/@NeverCodeAlone" target="_blank">{{ ux_icon('bi:youtube', { height: '20px', width: '20px' }) }} YouTube Kanal</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {{ component('chat') }}
+            <footer class="py-4 text-center">
+                Built with
+                <a href="https://symfony.com/ai" target="_blank">Symfony AI</a> and
+                <a href="https://youtube.com/@NeverCodeAlone" target="_blank">Never Code Alone</a>.
+            </footer>
+        </div>
+    </body>
+</html>
