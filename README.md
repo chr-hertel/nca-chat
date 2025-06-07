@@ -75,3 +75,16 @@ The [Chroma DB](https://www.trychroma.com/) is a vector store that is used to st
 It is defined as a service in the `compose.yaml` file and is started automatically when you run `docker compose up`.
 
 **Don't forget to set up the project in your favorite IDE or editor.**
+
+## Usage
+
+You can start chatting with the bot by opening https://localhost/ in your browser.
+
+To test the YouTube integration, you can use the following commands:
+```bash
+# Load videos from a specific YouTube channel - in this case @NeverCodeAlone
+docker compose exec app bin/console app:video:list
+
+# Load the transcript of a specific video by its ID
+docker compose exec app bin/console app:video:transcript l9LjRz6NNbM
+```
