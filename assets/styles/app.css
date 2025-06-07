@@ -1,0 +1,109 @@
+body {
+    min-height: 100vh;
+    background: url('/logo.png') no-repeat right 30px bottom 50px fixed, linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(221, 221, 221) 100%);
+
+    .navbar svg{
+        color: #5ab24a;
+    }
+
+    footer, footer a {
+        color: #6c757d;
+    }
+
+    footer a:hover {
+        color: #5ab24a;
+    }
+}
+
+.chat {
+    background-color: #F3F3F3;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #F3F3F3 7px ), repeating-linear-gradient( #e1e1e155, #e1e1e1 );
+    border: 1px solid #DDDDDD;
+    border-top: none;
+
+    #chat-body {
+        height: calc(100vh - 450px);
+        min-height: 700px;
+
+        #welcome {
+            height: 80%;
+            max-height: 550px;
+            background: url('/robot.png') no-repeat bottom left;
+
+            h4 {
+                color: #5ab24a;
+            }
+        }
+
+        .user-message {
+            background: #056dd5;
+            border-radius: 10px 10px 0 10px;
+            color: #ffffff;
+        }
+
+        .bot-message {
+            border-radius: 10px 10px 10px 0;
+            background: #5ab24a;
+            color: #ffffff;
+
+            &.loading {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+
+            &.bot {
+                outline: 1px solid #95da89;
+                background: #95da89;
+            }
+
+            &.user {
+                outline: 1px solid #a6d0ed;
+                background: #a6d0ed;
+            }
+        }
+
+        pre {
+            background: #19490e;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #e2ffdb;
+            text-decoration: underline;
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .chat-footer {
+        background: #efefef;
+        box-shadow: 0 -3px 3px rgba(128, 128, 128, 0.1);
+
+        input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        #chat-submit {
+            &:hover {
+                background: #5ab24a;
+                color: white;
+            }
+        }
+    }
+}
