@@ -1,0 +1,12 @@
+parameters:
+    level: 8
+    paths:
+        - bin/
+        - config/
+        - public/
+        - src/
+        - tests/
+    reportUnmatchedIgnoredErrors: false
+    typeAliases:
+        MessageArray: 'array{role: array{value: "user"|"assistant"}, content: string|list<array{text: string}>}'
+        MessageList: 'list<MessageArray>'
