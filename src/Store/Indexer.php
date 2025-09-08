@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Store;
 
 use Symfony\AI\Store\Document\Transformer\TextSplitTransformer;
-use Symfony\AI\Store\Indexer as AiIndexer;
+use Symfony\AI\Store\IndexerInterface as AiIndexer;
 
 final readonly class Indexer
 {
