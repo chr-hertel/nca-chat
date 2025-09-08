@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Chat;
 
+use Symfony\AI\Platform\Message\MessageInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\Attribute\LiveArg;
@@ -20,11 +21,11 @@ final class TwigComponent
     }
 
     /**
-     * @return MessageList
+     * @return MessageInterface[]
      */
     public function getMessages(): array
     {
-        return $this->chat->loadMessages();
+        return $this->chat->loadMessages()->withoutSystemMessage()->getMessages();
     }
 
     #[LiveAction]

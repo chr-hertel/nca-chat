@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Chat;
 
+use Symfony\AI\Agent\AgentInterface;
+use Symfony\AI\Platform\Message\Message;
+use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Platform\Result\TextResult;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 final class Chat
@@ -12,25 +16,25 @@ final class Chat
 
     public function __construct(
         private readonly RequestStack $requestStack,
+        private readonly AgentInterface $agent,
     ) {
     }
 
-    /**
-     * @return MessageList
-     */
-    public function loadMessages(): array
+    public function loadMessages(): MessageBag
     {
-        return $this->requestStack->getSession()->get(self::SESSION_KEY, []);
+        return $this->requestStack->getSession()->get(self::SESSION_KEY, new MessageBag());
     }
 
     public function submitMessage(string $message): void
     {
         $messages = $this->loadMessages();
 
-        $messages[] = ['role' => ['value' => 'user'], 'content' => [['text' => $message]]];
-        sleep(1); // Simulate GPT API call
-        $response = 'Das ist keine clevere Antwort.'; // TODO: Replace with Agent->call
-        $messages[] = ['role' => ['value' => 'assistant'], 'content' => $response];
+        $messages->add(Message::ofUser($message));
+        $result = $this->agent->call($messages);
+
+        assert($result instanceof TextResult);
+
+        $messages->add(Message::ofAssistant($result->getContent()));
 
         $this->saveMessages($messages);
     }
@@ -40,10 +44,7 @@ final class Chat
         $this->requestStack->getSession()->remove(self::SESSION_KEY);
     }
 
-    /**
-     * @param MessageList $messages
-     */
-    private function saveMessages(array $messages): void
+    private function saveMessages(MessageBag $messages): void
     {
         $this->requestStack->getSession()->set(self::SESSION_KEY, $messages);
     }

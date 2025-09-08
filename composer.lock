@@ -397,16 +397,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.410.0",
+            "version": "v0.411.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "ef335e912305403aef8a6552cc2101c537b9ebdd"
+                "reference": "3d616fcefdb8e6c598b2d007d4155fe516b91abd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/ef335e912305403aef8a6552cc2101c537b9ebdd",
-                "reference": "ef335e912305403aef8a6552cc2101c537b9ebdd",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/3d616fcefdb8e6c598b2d007d4155fe516b91abd",
+                "reference": "3d616fcefdb8e6c598b2d007d4155fe516b91abd",
                 "shasum": ""
             },
             "require": {
@@ -435,9 +435,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.410.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.411.0"
             },
-            "time": "2025-08-26T16:51:06+00:00"
+            "time": "2025-09-05T20:24:02+00:00"
         },
         {
             "name": "google/auth",
@@ -2479,12 +2479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ai-agent.git",
-                "reference": "9a8521b37fb2da42d3dd154dc1bac1d38e03459f"
+                "reference": "e43fc96db0b4f840389498755352ea8697baa867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ai-agent/zipball/9a8521b37fb2da42d3dd154dc1bac1d38e03459f",
-                "reference": "9a8521b37fb2da42d3dd154dc1bac1d38e03459f",
+                "url": "https://api.github.com/repos/symfony/ai-agent/zipball/e43fc96db0b4f840389498755352ea8697baa867",
+                "reference": "e43fc96db0b4f840389498755352ea8697baa867",
                 "shasum": ""
             },
             "require": {
@@ -2502,7 +2502,7 @@
                 "symfony/type-info": "^7.2.3"
             },
             "require-dev": {
-                "mrmysql/youtube-transcript": "^v0.0.5",
+                "mrmysql/youtube-transcript": "^0.0.5",
                 "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.5.13",
                 "symfony/ai-store": "@dev",
@@ -2566,7 +2566,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-03T17:54:42+00:00"
+            "time": "2025-09-08T10:13:55+00:00"
         },
         {
             "name": "symfony/ai-bundle",
@@ -2574,12 +2574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ai-bundle.git",
-                "reference": "2817123773fd41cf22846bbdb37f710d59b8adf4"
+                "reference": "537795b3bc3307cedfd7706c2a06118f575150b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ai-bundle/zipball/2817123773fd41cf22846bbdb37f710d59b8adf4",
-                "reference": "2817123773fd41cf22846bbdb37f710d59b8adf4",
+                "url": "https://api.github.com/repos/symfony/ai-bundle/zipball/537795b3bc3307cedfd7706c2a06118f575150b2",
+                "reference": "537795b3bc3307cedfd7706c2a06118f575150b2",
                 "shasum": ""
             },
             "require": {
@@ -2594,6 +2594,7 @@
                 "symfony/string": "^6.4 || ^7.0"
             },
             "require-dev": {
+                "google/auth": "^1.47",
                 "phpstan/phpstan": "^2.1",
                 "phpunit/phpunit": "^11.5",
                 "symfony/expression-language": "^6.4 || ^7.0",
@@ -2642,7 +2643,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-03T19:47:38+00:00"
+            "time": "2025-09-08T10:13:55+00:00"
         },
         {
             "name": "symfony/ai-platform",
@@ -2650,12 +2651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ai-platform.git",
-                "reference": "f28ca7e92cc61a6015cf4b3d48b966c01d5c9a2a"
+                "reference": "703085218340c54e8bd6e642b1c21834493d0d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ai-platform/zipball/f28ca7e92cc61a6015cf4b3d48b966c01d5c9a2a",
-                "reference": "f28ca7e92cc61a6015cf4b3d48b966c01d5c9a2a",
+                "url": "https://api.github.com/repos/symfony/ai-platform/zipball/703085218340c54e8bd6e642b1c21834493d0d60",
+                "reference": "703085218340c54e8bd6e642b1c21834493d0d60",
                 "shasum": ""
             },
             "require": {
@@ -2717,10 +2718,27 @@
             ],
             "description": "PHP library for interacting with AI platform provider.",
             "keywords": [
+                "Gemini",
+                "OpenRouter",
                 "ai",
+                "albert",
+                "anthropic",
+                "azure",
+                "bedrock",
+                "cerebras",
+                "elevenlabs",
                 "huggingface",
                 "inference",
-                "transformers"
+                "llama",
+                "lmstudio",
+                "meta",
+                "mistral",
+                "ollama",
+                "openai",
+                "replicate",
+                "transformers",
+                "vertexai",
+                "voyage"
             ],
             "support": {
                 "source": "https://github.com/symfony/ai-platform/tree/main"
@@ -2743,7 +2761,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-03T08:15:56+00:00"
+            "time": "2025-09-06T23:05:19+00:00"
         },
         {
             "name": "symfony/ai-store",
@@ -2751,12 +2769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ai-store.git",
-                "reference": "955aafd0ba85e3635aa6c8de9c3dab44397c07d5"
+                "reference": "0aa89a7fcbb79474f40cd9e6050245656642b1a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ai-store/zipball/955aafd0ba85e3635aa6c8de9c3dab44397c07d5",
-                "reference": "955aafd0ba85e3635aa6c8de9c3dab44397c07d5",
+                "url": "https://api.github.com/repos/symfony/ai-store/zipball/0aa89a7fcbb79474f40cd9e6050245656642b1a1",
+                "reference": "0aa89a7fcbb79474f40cd9e6050245656642b1a1",
                 "shasum": ""
             },
             "require": {
@@ -2778,7 +2796,9 @@
                 "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.5",
                 "probots-io/pinecone-php": "^1.0",
-                "symfony/cache": "^7.3"
+                "symfony/cache": "^6.4 || ^7.1",
+                "symfony/console": "^6.4 || ^7.1",
+                "symfony/dependency-injection": "^6.4 || ^7.1"
             },
             "default-branch": true,
             "type": "library",
@@ -2810,15 +2830,21 @@
             "description": "Low-level abstraction for storing and retrieving documents in a vector store.",
             "keywords": [
                 "ai",
+                "azure",
                 "chromadb",
+                "clickhouse",
+                "cloudflare",
                 "mariadb",
                 "meilisearch",
+                "milvus",
                 "mongodb",
                 "neo4j",
                 "pinecone",
                 "postgres",
                 "qdrant",
-                "surrealdb"
+                "surrealdb",
+                "typesense",
+                "weaviate"
             ],
             "support": {
                 "source": "https://github.com/symfony/ai-store/tree/main"
@@ -2841,7 +2867,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-02T05:11:13+00:00"
+            "time": "2025-09-08T12:29:20+00:00"
         },
         {
             "name": "symfony/asset",
