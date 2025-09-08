@@ -19,8 +19,8 @@ final readonly class Indexer
     public function index(string $channelHandle, int $limit): void
     {
         $documents = [];
-        foreach (($this->transformer)(($this->loader)($channelHandle, ['limit' => $limit])) as $document) {
-            array_push($documents, $document);
+        foreach ($this->transformer->transform($this->loader->load($channelHandle, ['limit' => $limit])) as $document) {
+            $documents[] = $document;
         }
 
         $this->indexer->index($documents);
