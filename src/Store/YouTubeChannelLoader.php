@@ -28,7 +28,7 @@ final readonly class YouTubeChannelLoader implements LoaderInterface
      *
      * @return iterable<TextDocument>
      */
-    public function __invoke(string $source, array $options = []): iterable
+    public function load(string $source, array $options = []): iterable
     {
         $limit = $options['limit'] ?? 100;
 

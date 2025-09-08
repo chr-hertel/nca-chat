@@ -5,7 +5,7 @@ services:
         autoconfigure: true
 
     Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch:
-        $model: '@ai.indexer.default.model'
+        $vectorizer: '@ai.vectorizer.default'
     Symfony\AI\Store\Document\Transformer\TextSplitTransformer: ~
 
 ai:
@@ -39,9 +39,13 @@ ai:
             video:
                 collection: 'youtube_videos'
 
-    indexer:
+    vectorizer:
         default:
-            store: 'ai.store.chroma_db.video'
             model:
                 class: 'Symfony\AI\Platform\Bridge\OpenAi\Embeddings'
                 name: 'text-embedding-ada-002'
+
+    indexer:
+        default:
+            vectorizer: 'ai.vectorizer.default'
+            store: 'ai.store.chroma_db.video'
